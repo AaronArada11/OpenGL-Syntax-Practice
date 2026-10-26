@@ -11,12 +11,14 @@ const shortLessons = [
 
 const lessons = fullLessons;
 
-const tokenPattern = /(gl\w+|glu\w+|GL_[A-Z_]+|GLfloat)/g;
+const tokenPattern = /(\/\/[^\n]*|\/\*[\s\S]*?\*\/|<[^>\n]+>|[A-Za-z_]\w*|\b\d+(?:\.\d+)?f?\b)/g;
+const isComment = (value) => value.startsWith('//') || value.startsWith('/*');
 
 function pickBlanks(lesson) {
-  const count = Math.max(3, Math.ceil(lesson.blanks.length * 0.65));
-  const picked = new Set([...lesson.blanks].sort(() => Math.random() - 0.5).slice(0, count));
-  return lesson.blanks.filter((answer) => picked.has(answer));
+  const bank = [...new Set((lesson.code.match(tokenPattern) || []).filter((token) => !isComment(token)))];
+  const count = Math.max(4, Math.ceil(bank.length * 0.18));
+  const picked = new Set(bank.sort(() => Math.random() - 0.5).slice(0, count));
+  return bank.filter((answer) => picked.has(answer));
 }
 
 export default function OpenGLSyntaxPractice() {
@@ -57,13 +59,14 @@ export default function OpenGLSyntaxPractice() {
   let blankIndex = 0;
   const blankedTokens = new Set();
   const renderedCode = lesson.code.split(tokenPattern).map((part, index) => {
+    if (isComment(part)) return <span key={index}>{part}</span>;
     if (!selected.includes(part) || blankedTokens.has(part)) return <span key={index}>{part}</span>;
     blankedTokens.add(part);
     const indexForBlank = blankIndex++;
     const value = answers[indexForBlank] || '';
     const isCorrect = value.trim() === part;
     const resultClass = checked ? (isCorrect ? 'correct' : 'wrong') : '';
-    const choices = [...new Set([part, ...selected])].sort();
+    const choices = [...new Set([part, ...selected.filter((choice) => choice !== part).sort(() => Math.random() - 0.5).slice(0, 9)])].sort();
     return <span key={index} className="blank-wrap"><select className={`blank ${resultClass}`} value={value} aria-label={`Blank ${indexForBlank + 1}`} onChange={(event) => { setAnswers({ ...answers, [indexForBlank]: event.target.value }); setChecked(false); }}><option value="">Choose…</option>{choices.map((choice) => <option key={choice} value={choice}>{choice}</option>)}</select></span>;
   });
 

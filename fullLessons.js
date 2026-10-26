@@ -48,7 +48,7 @@ int main(int argc, char** argv) {
 
     return 0;
 }`,
-    blanks: ['glBegin', 'glEnd', 'glPushMatrix', 'glTranslatef', 'glPopMatrix', 'glutDisplayFunc', 'glutMainLoop'],
+    blanks: ['<iostream>', '<GL/glut.h>', 'glBegin', 'glEnd', 'glPushMatrix', 'glTranslatef', 'glPopMatrix', 'glutDisplayFunc', 'glutMainLoop'],
   },
   {
     name: 'Color arrays',
@@ -110,7 +110,7 @@ int main(int argc, char** argv) {
 
     return 0;
 }`,
-    blanks: ['GLfloat', 'glEnableClientState', 'glVertexPointer', 'glColorPointer', 'glDrawArrays', 'glDisableClientState'],
+    blanks: ['<iostream>', '<GL/glut.h>', 'GLfloat', 'glEnableClientState', 'glVertexPointer', 'glColorPointer', 'glDrawArrays', 'glDisableClientState'],
   },
   {
     name: 'VBO upload',
@@ -199,7 +199,7 @@ int main(int argc, char** argv) {
 
     return 0;
 }`,
-    blanks: ['glGenBuffers', 'glBindBuffer', 'glBufferData', 'glBufferSubData', 'glVertexPointer', 'glColorPointer'],
+    blanks: ['<GL/glew.h>', '<GL/glut.h>', 'glGenBuffers', 'glBindBuffer', 'glBufferData', 'glBufferSubData', 'glVertexPointer', 'glColorPointer'],
   },
   {
     name: '3D cube',
@@ -338,7 +338,7 @@ int main(int argc, char** argv) {
 
     return 0;
 }`,
-    blanks: ['glEnable', 'GL_DEPTH_BUFFER_BIT', 'glMatrixMode', 'glLoadIdentity', 'gluPerspective', 'glTranslatef', 'glRotatef', 'glDrawArrays', 'glDisableClientState'],
+    blanks: ['<iostream>', '<GL/glew.h>', '<GL/glut.h>', 'glEnable', 'GL_DEPTH_BUFFER_BIT', 'glMatrixMode', 'glLoadIdentity', 'gluPerspective', 'glTranslatef', 'glRotatef', 'glDrawArrays', 'glDisableClientState'],
   },
 ];
 
