@@ -14,7 +14,9 @@ const lessons = fullLessons;
 const tokenPattern = /(gl\w+|glu\w+|GL_[A-Z_]+|GLfloat)/g;
 
 function pickBlanks(lesson) {
-  return [...lesson.blanks].sort(() => Math.random() - 0.5).slice(0, Math.max(3, Math.ceil(lesson.blanks.length * 0.65)));
+  const count = Math.max(3, Math.ceil(lesson.blanks.length * 0.65));
+  const picked = new Set([...lesson.blanks].sort(() => Math.random() - 0.5).slice(0, count));
+  return lesson.blanks.filter((answer) => picked.has(answer));
 }
 
 export default function OpenGLSyntaxPractice() {
@@ -41,7 +43,7 @@ export default function OpenGLSyntaxPractice() {
   }
 
   function checkAnswers() {
-    const correct = selected.filter((answer, index) => answers[index]?.trim() === answer).length;
+    const correct = Object.values(answers).filter((answer) => selected.includes(answer.trim())).length;
     setChecked(true);
     setStatus(`${correct} / ${selected.length} correct`);
   }
