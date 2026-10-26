@@ -45,7 +45,7 @@ export default function OpenGLSyntaxPractice() {
   }
 
   function checkAnswers() {
-    const correct = Object.values(answers).filter((answer) => selected.includes(answer.trim())).length;
+    const correct = selected.filter((answer, index) => answers[index]?.trim() === answer).length;
     setChecked(true);
     setStatus(`${correct} / ${selected.length} correct`);
   }
