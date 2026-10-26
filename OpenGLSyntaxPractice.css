@@ -20,8 +20,9 @@ button:focus-visible, input:focus-visible { outline:3px solid var(--lime); outli
 .editor { background:var(--panel); border-radius:14px; padding:20px 16px; box-shadow:0 18px 45px #463c2b18; overflow:auto; }
 .filebar { color:#a6ad9e; font:12px ui-monospace, SFMono-Regular, monospace; padding:0 10px 16px; border-bottom:1px solid #30352e; }
 .code-lines { margin:0; min-width:660px; color:var(--code); font:14px/1.65 ui-monospace, SFMono-Regular, Menlo, monospace; white-space:pre-wrap; }
-.blank-wrap { display:inline-block; width:9ch; height:1.6em; vertical-align:baseline; }
-.blank { display:block; width:100%; height:100%; color:var(--lime); border:1px solid #78846b; border-bottom:2px solid var(--lime); background:#273022; border-radius:4px 4px 0 0; padding:0 5px; text-align:center; font:inherit; cursor:pointer; }
+.blank-wrap { display:inline-flex; width:auto; min-width:9ch; height:1.6em; vertical-align:baseline; align-items:center; gap:6px; }
+.blank { display:block; flex:0 0 9ch; width:9ch; height:100%; color:var(--lime); border:1px solid #78846b; border-bottom:2px solid var(--lime); background:#273022; border-radius:4px 4px 0 0; padding:0 5px; text-align:center; font:inherit; cursor:pointer; }
 .blank::placeholder { color:#d5f46b; opacity:1; }.blank.correct { border-color:var(--ok); background:#21452c; color:#d9ffdf; box-shadow:0 0 0 2px #9ce6a466; }.blank.wrong { border-color:var(--coral); background:#542b28; color:#ffd8cf; box-shadow:0 0 0 2px #ff8d7066; }
+.correction { color:var(--ok); font:700 12px ui-monospace, SFMono-Regular, monospace; white-space:nowrap; }
 aside { border-left:1px solid var(--line); padding-left:20px; } aside h2 { font-size:16px; margin:0 0 10px; } aside p, aside li { color:#5d6058; font-size:13px; line-height:1.6; } aside ol { padding-left:20px; margin-top:10px; }.tip { border-top:1px solid var(--line); margin-top:22px; padding-top:18px; }
 @media (max-width:780px) { .practice-page { padding-top:30px; } .topline { display:block; } .intro { margin-top:18px; } .workspace { grid-template-columns:1fr; } aside { border-left:0; border-top:1px solid var(--line); padding:20px 0 0; } }
