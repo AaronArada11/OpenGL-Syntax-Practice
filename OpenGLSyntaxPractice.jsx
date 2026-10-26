@@ -61,7 +61,8 @@ export default function OpenGLSyntaxPractice() {
     const value = answers[indexForBlank] || '';
     const isCorrect = value.trim() === part;
     const resultClass = checked ? (isCorrect ? 'correct' : 'wrong') : '';
-    return <span key={index} className="blank-wrap"><input className={`blank ${resultClass}`} value={value} placeholder="____" aria-label={`Blank ${indexForBlank + 1}`} onChange={(event) => { setAnswers({ ...answers, [indexForBlank]: event.target.value }); setChecked(false); }} /></span>;
+    const choices = [...new Set([part, ...selected])].sort();
+    return <span key={index} className="blank-wrap"><select className={`blank ${resultClass}`} value={value} aria-label={`Blank ${indexForBlank + 1}`} onChange={(event) => { setAnswers({ ...answers, [indexForBlank]: event.target.value }); setChecked(false); }}><option value="">Choose…</option>{choices.map((choice) => <option key={choice} value={choice}>{choice}</option>)}</select></span>;
   });
 
   return <main className="practice-page">
