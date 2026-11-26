@@ -177,7 +177,6 @@ void translate(float x, float y) {
 
 void display() {
     glClear(GL_COLOR_BUFFER_BIT);
-    translate(0.6f, 0.0f);
     glBegin(GL_TRIANGLES);
     for (int i = 0; i < 6; i += 2) {
         glVertex2f(vertices[i], vertices[i + 1]);
@@ -189,6 +188,7 @@ void display() {
 int main(int argc, char** argv) {
     glutInit(&argc, argv);
     glutCreateWindow("Matrix Translation");
+    translate(0.6f, 0.0f);
     glutDisplayFunc(display);
     glutMainLoop();
     return 0;
@@ -267,4 +267,341 @@ int main(int argc, char** argv) {
             ______
          __/  ◐   \\__
         /            _\\>
-        \\____________/`}],f=e((e=>{var t=Symbol.for(`react.transitional.element`);function n(e,n,r){var i=null;if(r!==void 0&&(i=``+r),n.key!==void 0&&(i=``+n.key),`key`in n)for(var a in r={},n)a!==`key`&&(r[a]=n[a]);else r=n;return n=r.ref,{$$typeof:t,type:e,key:i,ref:n===void 0?null:n,props:r}}e.jsx=n,e.jsxs=n})),p=e(((e,t)=>{t.exports=f()}))(),m=d,h=[...new Set(m.map(e=>e.module))],g=/(\/\/[^\n]*|\/\*[\s\S]*?\*\/|<[^>\n]+>|[A-Za-z_]\w*|\b\d+(?:\.\d+)?f?\b)/g,_=e=>e.startsWith(`//`)||e.startsWith(`/*`);function v(e){let t=[...new Set((e.code.match(g)||[]).filter(e=>!_(e)))],n=Math.max(4,Math.ceil(t.length*.18)),r=new Set(t.sort(()=>Math.random()-.5).slice(0,n));return t.filter(e=>r.has(e))}function y(){let[e,t]=(0,l.useState)(0),[n,r]=(0,l.useState)(()=>v(m[0])),[i,a]=(0,l.useState)({}),[o,s]=(0,l.useState)(!1),[c,u]=(0,l.useState)(`Select a lesson to begin.`),d=m[e];function f(e){t(e),r(v(m[e])),a({}),s(!1),u(`Blanks selected • ${m[e].name}`)}function y(){r(v(d)),a({}),s(!1),u(`New blanks selected • ${d.name}`)}function b(){let e=n.filter(e=>i[e]?.trim()===e).length;s(!0),u(`${e} / ${n.length} correct`)}function ee(){a(Object.fromEntries(n.map(e=>[e,e]))),s(!0),u(`Answers revealed.`)}let te=0,ne=new Set,re=d.code.split(g).map((e,t)=>{if(_(e)||!n.includes(e)||ne.has(e))return(0,p.jsx)(`span`,{children:e},t);ne.add(e);let r=te++,c=i[e]||``,l=c.trim()===e,u=o?l?`correct`:`wrong`:``,d=[...new Set([e,...n.filter(t=>t!==e).sort(()=>Math.random()-.5).slice(0,9)])].sort();return(0,p.jsxs)(`span`,{className:`blank-wrap`,children:[(0,p.jsxs)(`select`,{className:`blank ${u}`,value:c,"aria-label":`Blank ${r+1}`,onChange:t=>{a({...i,[e]:t.target.value}),s(!1)},children:[(0,p.jsx)(`option`,{value:``,children:`Choose…`}),d.map(e=>(0,p.jsx)(`option`,{value:e,children:e},e))]}),o&&!l&&(0,p.jsxs)(`span`,{className:`correction`,children:[`→ `,e]})]},t)});return(0,p.jsxs)(`main`,{className:`practice-page`,children:[(0,p.jsxs)(`section`,{className:`topline`,children:[(0,p.jsxs)(`div`,{children:[(0,p.jsx)(`div`,{className:`eyebrow`,children:`OpenGL / syntax lab`}),(0,p.jsxs)(`h1`,{children:[`Fill the gaps.`,(0,p.jsx)(`br`,{}),`Keep the shape.`]})]}),(0,p.jsx)(`p`,{className:`intro`,children:`Review one C++ OpenGL example from each course module. Choose a practice, select the missing syntax, and check your memory.`})]}),(0,p.jsxs)(`div`,{className:`toolbar`,children:[(0,p.jsx)(`button`,{onClick:y,children:`Randomize blanks`}),(0,p.jsx)(`button`,{className:`secondary`,onClick:b,children:`Check answers`}),(0,p.jsx)(`button`,{className:`secondary`,onClick:ee,children:`Reveal`})]}),(0,p.jsx)(`div`,{className:`status`,"aria-live":`polite`,children:c}),(0,p.jsx)(`nav`,{className:`module-tabs`,"aria-label":`Practices by module`,children:h.map(t=>(0,p.jsxs)(`section`,{className:`module-group`,"aria-labelledby":`module-${t}`,children:[(0,p.jsxs)(`h2`,{id:`module-${t}`,children:[`Module `,t]}),m.map((n,r)=>n.module===t&&(0,p.jsx)(`button`,{className:`tab ${r===e?`active`:``}`,"aria-current":r===e?`page`:void 0,onClick:()=>f(r),children:n.name},n.name))]},t))}),(0,p.jsxs)(`section`,{className:`workspace`,children:[(0,p.jsxs)(`div`,{className:`editor`,children:[(0,p.jsxs)(`div`,{className:`filebar`,children:[`module-`,String(d.module).padStart(2,`0`),`.cpp`]}),(0,p.jsx)(`div`,{className:`code-lines`,children:re})]}),(0,p.jsxs)(`aside`,{children:[(0,p.jsx)(`h2`,{children:`How to practice`}),(0,p.jsxs)(`ol`,{children:[(0,p.jsx)(`li`,{children:`Read the surrounding code.`}),(0,p.jsx)(`li`,{children:`Fill the highlighted gaps.`}),(0,p.jsx)(`li`,{children:`Check your memory.`}),(0,p.jsx)(`li`,{children:`Randomize for a fresh set.`})]}),(0,p.jsxs)(`div`,{className:`tip`,children:[(0,p.jsx)(`h2`,{children:`Focus areas`}),(0,p.jsx)(`p`,{children:d.focus})]}),(0,p.jsxs)(`div`,{className:`tip`,children:[(0,p.jsx)(`h2`,{children:`Expected output`}),(0,p.jsx)(`pre`,{className:`output-preview`,children:d.output})]})]})]})]})}(0,u.createRoot)(document.getElementById(`root`)).render((0,p.jsx)(l.StrictMode,{children:(0,p.jsx)(y,{})}));
+        \\____________/`},{module:7,name:`Translation`,focus:`Transforms, matrix stack, and GLUT setup.`,code:`#include <iostream>
+#include <GL/glut.h>
+using namespace std;
+
+void triangle() {
+    glBegin(GL_TRIANGLES);
+        glVertex2f(-0.2f, -0.2f);
+        glVertex2f( 0.2f, -0.2f);
+        glVertex2f( 0.0f,  0.2f);
+    glEnd();
+}
+
+void display(){
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    //Original Triangle
+    glColor3f(1.0f, 1.0f, 0.0f);
+
+    //first translation
+    glPushMatrix();
+        glTranslatef(-0.5,0.0,0.0);
+        triangle();
+    glPopMatrix();
+
+    //Moved Triangle
+    glColor3f(0.0f, 1.0f, 1.0f);
+
+    //Second translation
+    glPushMatrix();
+        glTranslatef(0.5, -0.5, 0.0);
+        triangle();
+    glPopMatrix();
+
+    glFlush();
+}
+
+int main(int argc, char** argv) {
+    glutInit(&argc, argv);
+    glutInitWindowSize(800, 600);
+    glutCreateWindow("Translation Demo");
+
+    glutDisplayFunc(display);
+    glutMainLoop();
+
+    return 0;
+}`,blanks:[`<iostream>`,`<GL/glut.h>`,`glBegin`,`glEnd`,`glPushMatrix`,`glTranslatef`,`glPopMatrix`,`glutDisplayFunc`,`glutMainLoop`],output:`A yellow triangle on the left and a cyan triangle lower on the right.
+
+          △
+      yellow              cyan △`},{module:4,name:`Color arrays`,focus:`Client states, pointers, and indexed drawing.`,code:`#include <iostream>
+#include <GL/glut.h>
+using namespace std;
+
+// Triangle coordinates
+GLfloat vertices[] = {
+    -0.5f, -0.5f, 0.0f,
+     0.5f, -0.5f, 0.0f,
+     0.0f,  0.5f, 0.0f
+};
+
+// RGB color for each vertex
+GLfloat colors[] = {
+    1.0f, 0.0f, 0.0f, // Red
+    0.0f, 1.0f, 0.0f, // Green
+    0.0f, 0.0f, 1.0f  // Blue
+};
+
+void display() {
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    glEnableClientState(GL_VERTEX_ARRAY);
+    glEnableClientState(GL_COLOR_ARRAY);
+
+    // Set vertex coordinates
+    glVertexPointer(3, GL_FLOAT, 0, vertices);
+
+    // Set vertex colors
+    glColorPointer(3, GL_FLOAT, 0, colors);
+
+    // Draw triangle
+    glDrawArrays(GL_TRIANGLES, 0, 3);
+
+    /*
+    glBegin(GL_TRIANGLES);
+        glArrayElement(0); // First vertex: Red
+        glArrayElement(1); // Second vertex: Green
+        glArrayElement(2); // Third vertex: Blue
+    glEnd();
+    */
+
+    glDisableClientState(GL_COLOR_ARRAY);
+    glDisableClientState(GL_VERTEX_ARRAY);
+
+    glFlush();
+}
+
+int main(int argc, char** argv) {
+    glutInit(&argc, argv);
+    glutInitWindowSize(800, 600);
+    glutCreateWindow("Color Array Demo");
+
+    glutDisplayFunc(display);
+    glutMainLoop();
+
+    return 0;
+}`,blanks:[`<iostream>`,`<GL/glut.h>`,`GLfloat`,`glEnableClientState`,`glVertexPointer`,`glColorPointer`,`glDrawArrays`,`glDisableClientState`],output:`A triangle whose three vertex colors blend across its face.
+
+             B
+            / \\
+           /___\\
+          R     G`},{module:5,name:`VBO upload`,focus:`Buffer allocation, offsets, and GLEW setup.`,code:`#define GLEW_STATIC
+#include <GL/glew.h>
+#include <GL/glut.h>
+#include <iostream>
+using namespace std;
+
+GLuint VBO;
+
+// Triangle coordinates
+GLfloat vertices[] = {
+    -0.5f, -0.5f, 0.0f,
+     0.5f, -0.5f, 0.0f,
+     0.0f,  0.5f, 0.0f
+};
+
+// RGB colors
+GLfloat colors[] = {
+    1.0f, 0.0f, 0.0f,
+    0.0f, 1.0f, 0.0f,
+    0.0f, 0.0f, 1.0f
+};
+
+void init() {
+    if (glewInit() != GLEW_OK) {
+        cout << "GLEW initialization failed!";
+        exit(1);
+    }
+
+    glGenBuffers(1, &VBO);
+    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+
+    // Allocate space for vertices and colors
+    glBufferData(GL_ARRAY_BUFFER,
+                 sizeof(vertices) + sizeof(colors),
+                 NULL, GL_STATIC_DRAW);
+
+    // Upload vertex coordinates
+    glBufferSubData(GL_ARRAY_BUFFER,
+                    0, sizeof(vertices), vertices);
+
+    // Upload vertex colors
+    glBufferSubData(GL_ARRAY_BUFFER,
+                    sizeof(vertices),
+                    sizeof(colors), colors);
+
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
+}
+
+void display() {
+    glClear(GL_COLOR_BUFFER_BIT);
+
+    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+
+    glEnableClientState(GL_VERTEX_ARRAY);
+    glEnableClientState(GL_COLOR_ARRAY);
+
+    // Vertices begin at offset 0
+    glVertexPointer(3, GL_FLOAT, 0, (void*)0);
+
+    // Colors begin after the vertex data
+    glColorPointer(3, GL_FLOAT, 0,
+                   (void*)sizeof(vertices));
+
+    glDrawArrays(GL_TRIANGLES, 0, 3);
+
+    glDisableClientState(GL_COLOR_ARRAY);
+    glDisableClientState(GL_VERTEX_ARRAY);
+
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
+    glFlush();
+}
+
+int main(int argc, char** argv) {
+    glutInit(&argc, argv);
+    glutInitWindowSize(800, 600);
+    glutCreateWindow("VBO Color Array Demo");
+
+    init();
+
+    glutDisplayFunc(display);
+    glutMainLoop();
+
+    return 0;
+}`,blanks:[`<GL/glew.h>`,`<GL/glut.h>`,`glGenBuffers`,`glBindBuffer`,`glBufferData`,`glBufferSubData`,`glVertexPointer`,`glColorPointer`],output:`A red, green, and blue triangle drawn from one packed GPU buffer.
+
+             B
+            / \\
+           /___\\
+          R     G`},{module:6,name:`3D cube`,focus:`Depth testing, projection, transforms, and faces.`,code:`#define GLEW_STATIC
+#include <iostream>
+#include <GL/glew.h>
+#include <GL/glut.h>
+using namespace std;
+
+GLuint VBO;
+
+// Cube vertices: 6 faces, 4 vertices each
+GLfloat vertices[] = {
+    // FRONT
+    -1, -1,  1,
+     1, -1,  1,
+     1,  1,  1,
+    -1,  1,  1,
+
+    // BACK
+    -1, -1, -1,
+    -1,  1, -1,
+     1,  1, -1,
+     1, -1, -1,
+
+    // TOP
+    -1,  1, -1,
+    -1,  1,  1,
+     1,  1,  1,
+     1,  1, -1,
+
+    // BOTTOM
+    -1, -1, -1,
+     1, -1, -1,
+     1, -1,  1,
+    -1, -1,  1,
+
+    // RIGHT
+     1, -1, -1,
+     1,  1, -1,
+     1,  1,  1,
+     1, -1,  1,
+
+    // LEFT
+    -1, -1, -1,
+    -1, -1,  1,
+    -1,  1,  1,
+    -1,  1, -1
+};
+
+void init() {
+    // Initialize GLEW
+    if (glewInit() != GLEW_OK) {
+        cout << "GLEW initialization failed!";
+        exit(1);
+    }
+
+    glEnable(GL_DEPTH_TEST);
+
+    // Create VBO
+    glGenBuffers(1, &VBO);
+    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+
+    // Upload cube vertices
+    glBufferData(GL_ARRAY_BUFFER,
+                 sizeof(vertices),
+                 vertices,
+                 GL_STATIC_DRAW);
+
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
+
+    // Set perspective
+    glMatrixMode(GL_PROJECTION);
+    glLoadIdentity();
+    gluPerspective(45.0, 800.0 / 600.0, 1.0, 100.0);
+}
+
+void display() {
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+    glMatrixMode(GL_MODELVIEW);
+    glLoadIdentity();
+
+    // Move cube away from camera
+    glTranslatef(0.0f, 0.0f, -6.0f);
+
+    // Rotate cube
+    glRotatef(25.0f, 1.0f, 0.0f, 0.0f);
+    //glRotatef(35.0f, 0.0f, 1.0f, 0.0f);
+
+    // Bind VBO
+    glBindBuffer(GL_ARRAY_BUFFER, VBO);
+
+    // Enable vertex array
+    glEnableClientState(GL_VERTEX_ARRAY);
+    glVertexPointer(3, GL_FLOAT, 0, (void*)0);
+
+    // Draw each face with different color
+    glColor3f(1, 0, 0); // Red
+    glDrawArrays(GL_QUADS, 0, 4);
+
+    glColor3f(0, 1, 0); // Green
+    glDrawArrays(GL_QUADS, 4, 4);
+
+    glColor3f(0, 0, 1); // Blue
+    glDrawArrays(GL_QUADS, 8, 4);
+
+    glColor3f(1, 1, 0); // Yellow
+    glDrawArrays(GL_QUADS, 12, 4);
+
+    glColor3f(1, 0, 1); // Magenta
+    glDrawArrays(GL_QUADS, 16, 4);
+
+    glColor3f(0, 1, 1); // Cyan
+    glDrawArrays(GL_QUADS, 20, 4);
+
+    // Disable vertex array
+    glDisableClientState(GL_VERTEX_ARRAY);
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
+
+    glFlush();
+}
+
+int main(int argc, char** argv) {
+    glutInit(&argc, argv);
+
+    glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB | GLUT_DEPTH);
+    glutInitWindowSize(800, 600);
+    glutCreateWindow("3D Cube Using VBO");
+
+    init();
+
+    glutDisplayFunc(display);
+    glutMainLoop();
+
+    return 0;
+}`,blanks:[`<iostream>`,`<GL/glew.h>`,`<GL/glut.h>`,`glEnable`,`GL_DEPTH_BUFFER_BIT`,`glMatrixMode`,`glLoadIdentity`,`gluPerspective`,`glTranslatef`,`glRotatef`,`glDrawArrays`,`glDisableClientState`],output:`A rotated cube with a different color on each visible face.
+
+            +────+
+           /    /│
+          +────+ │
+          │    │ +
+          │    │/
+          +────+`}],f=e((e=>{var t=Symbol.for(`react.transitional.element`);function n(e,n,r){var i=null;if(r!==void 0&&(i=``+r),n.key!==void 0&&(i=``+n.key),`key`in n)for(var a in r={},n)a!==`key`&&(r[a]=n[a]);else r=n;return n=r.ref,{$$typeof:t,type:e,key:i,ref:n===void 0?null:n,props:r}}e.jsx=n,e.jsxs=n})),p=e(((e,t)=>{t.exports=f()}))(),m=d,h=[...new Set(m.map(e=>e.module))],g=/(\/\/[^\n]*|\/\*[\s\S]*?\*\/|<[^>\n]+>|[A-Za-z_]\w*|\b\d+(?:\.\d+)?f?\b)/g,_=e=>e.startsWith(`//`)||e.startsWith(`/*`);function v(e){let t=[...new Set((e.code.match(g)||[]).filter(e=>!_(e)))],n=Math.max(4,Math.ceil(t.length*.18)),r=new Set(t.sort(()=>Math.random()-.5).slice(0,n));return t.filter(e=>r.has(e))}function y(){let[e,t]=(0,l.useState)(0),[n,r]=(0,l.useState)(()=>v(m[0])),[i,a]=(0,l.useState)({}),[o,s]=(0,l.useState)(!1),[c,u]=(0,l.useState)(`Select a lesson to begin.`),d=m[e];function f(e){t(e),r(v(m[e])),a({}),s(!1),u(`Blanks selected • ${m[e].name}`)}function y(){r(v(d)),a({}),s(!1),u(`New blanks selected • ${d.name}`)}function b(){let e=n.filter(e=>i[e]?.trim()===e).length;s(!0),u(`${e} / ${n.length} correct`)}function ee(){a(Object.fromEntries(n.map(e=>[e,e]))),s(!0),u(`Answers revealed.`)}let te=0,ne=new Set,re=d.code.split(g).map((e,t)=>{if(_(e)||!n.includes(e)||ne.has(e))return(0,p.jsx)(`span`,{children:e},t);ne.add(e);let r=te++,c=i[e]||``,l=c.trim()===e,u=o?l?`correct`:`wrong`:``,d=[...new Set([e,...n.filter(t=>t!==e).sort(()=>Math.random()-.5).slice(0,9)])].sort();return(0,p.jsxs)(`span`,{className:`blank-wrap`,children:[(0,p.jsxs)(`select`,{className:`blank ${u}`,value:c,"aria-label":`Blank ${r+1}`,onChange:t=>{a({...i,[e]:t.target.value}),s(!1)},children:[(0,p.jsx)(`option`,{value:``,children:`Choose…`}),d.map(e=>(0,p.jsx)(`option`,{value:e,children:e},e))]}),o&&!l&&(0,p.jsxs)(`span`,{className:`correction`,children:[`→ `,e]})]},t)});return(0,p.jsxs)(`main`,{className:`practice-page`,children:[(0,p.jsxs)(`section`,{className:`topline`,children:[(0,p.jsxs)(`div`,{children:[(0,p.jsx)(`div`,{className:`eyebrow`,children:`OpenGL / syntax lab`}),(0,p.jsxs)(`h1`,{children:[`Fill the gaps.`,(0,p.jsx)(`br`,{}),`Keep the shape.`]})]}),(0,p.jsx)(`p`,{className:`intro`,children:`Review one C++ OpenGL example from each course module. Choose a practice, select the missing syntax, and check your memory.`})]}),(0,p.jsxs)(`div`,{className:`toolbar`,children:[(0,p.jsx)(`button`,{onClick:y,children:`Randomize blanks`}),(0,p.jsx)(`button`,{className:`secondary`,onClick:b,children:`Check answers`}),(0,p.jsx)(`button`,{className:`secondary`,onClick:ee,children:`Reveal`})]}),(0,p.jsx)(`div`,{className:`status`,"aria-live":`polite`,children:c}),(0,p.jsx)(`nav`,{className:`module-tabs`,"aria-label":`Practices by module`,children:h.map(t=>(0,p.jsxs)(`section`,{className:`module-group`,"aria-labelledby":`module-${t}`,children:[(0,p.jsxs)(`h2`,{id:`module-${t}`,children:[`Module `,t]}),m.map((n,r)=>n.module===t&&(0,p.jsx)(`button`,{className:`tab ${r===e?`active`:``}`,"aria-current":r===e?`page`:void 0,onClick:()=>f(r),children:n.name},n.name))]},t))}),(0,p.jsxs)(`section`,{className:`workspace`,children:[(0,p.jsxs)(`div`,{className:`editor`,children:[(0,p.jsxs)(`div`,{className:`filebar`,children:[`module-`,String(d.module).padStart(2,`0`),`.cpp`]}),(0,p.jsx)(`div`,{className:`code-lines`,children:re})]}),(0,p.jsxs)(`aside`,{children:[(0,p.jsx)(`h2`,{children:`How to practice`}),(0,p.jsxs)(`ol`,{children:[(0,p.jsx)(`li`,{children:`Read the surrounding code.`}),(0,p.jsx)(`li`,{children:`Fill the highlighted gaps.`}),(0,p.jsx)(`li`,{children:`Check your memory.`}),(0,p.jsx)(`li`,{children:`Randomize for a fresh set.`})]}),(0,p.jsxs)(`div`,{className:`tip`,children:[(0,p.jsx)(`h2`,{children:`Focus areas`}),(0,p.jsx)(`p`,{children:d.focus})]}),(0,p.jsxs)(`div`,{className:`tip`,children:[(0,p.jsx)(`h2`,{children:`Expected output`}),(0,p.jsx)(`pre`,{className:`output-preview`,children:d.output})]})]})]})]})}(0,u.createRoot)(document.getElementById(`root`)).render((0,p.jsx)(l.StrictMode,{children:(0,p.jsx)(y,{})}));
