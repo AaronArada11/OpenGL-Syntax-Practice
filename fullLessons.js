@@ -26,7 +26,7 @@ int main(int argc, char** argv) {
     return 0;
 }`,
     blanks: ['<GL/glut.h>', 'glClear', 'glBegin', 'GL_POLYGON', 'glVertex2f', 'glEnd', 'glutInit', 'glutDisplayFunc', 'glutMainLoop'],
-    output: `A window with a green square centered on a dark background.
+    output: `A window with a green rectangle centered on a dark background.
 
         ┌──────────┐
         │  ██████  │

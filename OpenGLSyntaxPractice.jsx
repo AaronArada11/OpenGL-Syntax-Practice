@@ -65,7 +65,7 @@ export default function OpenGLSyntaxPractice() {
   });
 
   return <main className="practice-page">
-    <section className="topline"><div><div className="eyebrow">OpenGL / syntax lab</div><h1>Fill the gaps.<br />Keep the shape.</h1></div><p className="intro">Review one C++ OpenGL example from each course module. Choose a practice, select the missing syntax, and check your memory.</p></section>
+    <section className="topline"><div><div className="eyebrow">OpenGL / syntax lab</div><h1>Fill the gaps.<br />Keep the shape.</h1></div><p className="intro">Review C++ OpenGL examples from each course module. Choose a practice, select the missing syntax, and check your memory.</p></section>
     <div className="toolbar"><button onClick={randomize}>Randomize blanks</button><button className="secondary" onClick={checkAnswers}>Check answers</button><button className="secondary" onClick={reveal}>Reveal</button></div>
     <div className="status" aria-live="polite">{status}</div>
     <nav className="module-tabs" aria-label="Practices by module">{modules.map((module) => <section className="module-group" key={module} aria-labelledby={`module-${module}`}><h2 id={`module-${module}`}>Module {module}</h2>{lessons.map((item, index) => item.module === module && <button key={item.name} className={`tab ${index === lessonIndex ? 'active' : ''}`} aria-current={index === lessonIndex ? 'page' : undefined} onClick={() => chooseLesson(index)}>{item.name}</button>)}</section>)}</nav>
