@@ -15,11 +15,13 @@ Open the local URL shown by Vite, usually `http://localhost:5173`.
 
 ## Practice features
 
-- Four complete OpenGL code lessons.
+- One complete OpenGL code practice for each course module, from Module 1 through Module 8.
+- Module categories based on the course notes.
 - Random blanks across the code, including library headers.
 - Dropdown choices for each blank.
 - Answer checking with score, red incorrect answers, and corrected syntax.
 - Randomize and reveal controls.
+- A text preview of each program's expected window output.
 
 ## Main files
 
